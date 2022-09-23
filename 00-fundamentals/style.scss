@@ -38,6 +38,7 @@ body {
   border-radius: 0.25rem;
   outline: none;
   transition: inherit;
+  transition: border-color 0.3s ease-in;
 }
 
 .ui-button {
@@ -49,7 +50,17 @@ body {
   border-radius: 0.25rem;
   height: var(--input-height);
   background-color: var(--color);
-  transition: inherit;
+  // transition: inherit;
+  transition-property: background-color, opacity, transform;
+  // transition-delay: 3s;
+  transition-duration: 0.3s;
+  &:hover {
+    opacity: 0.5;
+    transform: scale(1.1)
+  }
+  &:active {
+    transform: translateY(10%)
+  }
 }
 
 [data-show]:not([data-active]) {
