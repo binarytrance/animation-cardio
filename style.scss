@@ -24,17 +24,43 @@ ul {
 }
 
 .ball {
+  margin-left: 50vw;
   height: 5vmin;
   width: 5vmin;
   border-radius: 50%;
   background: radial-gradient(circle at bottom right, #fb2324, #fe932a);
-  animation: slide-right 1s linear infinite
+  animation-name: move-as-square, red-to-green;
+  animation-duration: 4s;
+  animation-delay: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count:2;
+  animation-fill-mode: both;
+  animation-direction: alternate;
 }
 
-@keyframes slide-right {
+@keyframes red-to-green {
   from {
-    transform: translateX(0)
+    background: red;
   } to {
-    transform: translateX(50vw)
+    background: green
   }
+}
+
+@keyframes move-as-square {
+  0% {
+    transform: translateX(-50vw)
+  }
+  25% {
+    transform: translateX(20vw)
+  }
+  50% {
+    transform: translateX(20vw) translateY(20vw);
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  }
+  100% {
+    transform: translateX(0vw) translateY(20vw)
+  }
+  // 100% {
+  //   transform: translateX(0vw)
+  // }
 }

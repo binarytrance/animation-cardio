@@ -23,10 +23,29 @@ body {
   grid-template-rows: 1fr;
   grid-column-gap: 1rem;
   grid-template-areas: 'input button';
-
   --color: var(--color-gray);
   &:focus-within {
     --color: var(--color-blue);
+
+  }
+  &:hover {
+    animation-name: shake-it;
+    animation-duration: 0.1s;
+    animation-delay: 0.3s;
+    animation-iteration-count: 10;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes shake-it {
+  from, to {
+    transform: none
+  }
+  25% {
+    transform: translateX(-1%);
+  }
+  75% {
+    transform: translateX(1%);
   }
 }
 
